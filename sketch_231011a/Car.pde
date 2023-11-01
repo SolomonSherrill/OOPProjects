@@ -30,6 +30,7 @@ class Car extends Vehicle{
     rect(carX+xspeed,carY,carW/1.5,carH/1.5);
     fill(0);
     stroke(0);
+    //draws the wheels
     ellipse(carX-carW/2+xspeed,carY+carH/2,carW/2,carW/2);
     ellipse(carX+carW/2+xspeed,carY+carH/2,carW/2,carW/2);
    

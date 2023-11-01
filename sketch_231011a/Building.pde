@@ -33,6 +33,7 @@ class Building{
   fill(r1,b1,g1);
   stroke(0);
   rect(x , y, width1,height1);
+  //uses nested for loop to create windows
   for (int l = y-height1/2+y2; l < y+height1/2; l+=height2){
     for (int k = x-width1/2+x2; k < x+width1/2; k+=width2){
       fill(83,200,244);
@@ -41,11 +42,13 @@ class Building{
     }
   }
   fill(108,70,32);
+  //cool math
   rect(x,y+height1/2-height1/10,width1/5,height1/5);
   line(x,y+height1/2,x,y+height1/2-height1/5);
   fill(0);
   circle(x-width1/35,y+height1/2-height1/10,width1/50);
   circle(x+width1/35,y+height1/2-height1/10,width1/50);
+  //gives building a top depending on the variable value
   if (tophat == 1){ 
     rectMode(CENTER);
     fill(r1,b1,g1);

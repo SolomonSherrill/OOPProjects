@@ -1,3 +1,4 @@
+//very basic, does not need much code, is pretty self-explanatory
 class Star{
   int starX;
   int starY;

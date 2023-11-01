@@ -9,6 +9,7 @@ class SunAndMoon{
     //uses push and pop matrix to make only things inside it get affected
     pushMatrix();
     translate(width/2,height);
+    //rotates in circle according to time
     rotate(radians(time/1440*360));
     fill(246, 241, 213);
     stroke(246, 241, 213);

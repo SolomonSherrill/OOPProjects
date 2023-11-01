@@ -7,7 +7,6 @@ float g1 = 206;
 float b1 = 235;
 float time = 0;
 Star[] Stars;
-Track track1;
 //making objects from constructors
 Building Skyscraper;
 Building Skyscraper2;
@@ -27,8 +26,8 @@ void setup() {
   Sun = new SunAndMoon();
   Car1 = new Car(0,520,40,20,255,255,0);
   Car2 = new Car(1200,575,40,20,0,255,0);
+  //creates stars using an array of stars
   Stars = new Star[30];
-  track1 = new Track(0,650,60);
   for (int i=0; i < 30; i++){
     Stars[i] = new Star(int(random(0,1200)),int(random(0,600)));
     Stars[i].drawStar();
@@ -36,11 +35,12 @@ void setup() {
   
 }
 void draw() {
-  //setting time
+  //setting time on a 24 second clock
   time = time +1;
   if (time == 1440) {
     time = 0;
   }
+  //edits background color depending on time
   background(r, g, b);
   if (time <= 432) {
     r = 135;
@@ -67,6 +67,7 @@ void draw() {
     g += 0.78472222222;
     b += 0.88194444444;
   }
+  //draws each individual star
   for (int i=0; i < 30; i++){
     Stars[i].drawStar();
   }
@@ -81,10 +82,12 @@ void draw() {
     b1 = 255;
     g1 = 255;
   }
+  //drawing all objects
   Sun.drawSunAndMoon();
   Skyscraper.drawBuilding();
   Skyscraper2.drawBuilding();
   House.drawBuilding();
+  //drawing road
   fill(90,90,90);
   rect(600,550,12000,100);
   fill(255,255,0);
@@ -102,12 +105,13 @@ void draw() {
   rect(1050,550,40,15);
   rect(1150,550,40,15);
   stroke(0);
+  //drawing cars to go on road
   Car1.drawCar();
   Car1.Move();
   Car2.drawCar();
   Car2.Move();
   fill(#567D46);
   stroke(#567D46);
+  //grass for filling space
   rect(600,650,1200,100);
-  track1.drawTrack();
 }
